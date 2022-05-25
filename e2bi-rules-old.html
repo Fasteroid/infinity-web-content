@@ -1,0 +1,212 @@
+
+<html>
+<head>
+
+    <link rel="stylesheet" href="infinity-style.css">
+    <style>
+        hr { 
+            display: block;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            margin-left: auto;
+            margin-right: auto;
+            border-style: inset;
+            border-width: 1px;
+            border-color: #ffffff
+        } 
+        big {
+            font-family: 'Trebuchet MS', serif;
+            font-size: 26px;
+            color:#eeeeee;
+        }
+        h {
+            font-family: 'Trebuchet MS', serif;
+            font-size: 20px;
+            color:#ffffff;
+            font-weight: bold;
+        }
+        rules {
+            color: #ffffff;
+            font-family: Trebuchet MS,Helvetica,sans-serif;
+            font-size: 14px;
+        }
+        div.top {
+            font-family: 'Trebuchet MS', serif;
+            font-size: 40px;
+            text-align: center;
+            color:#ffffff;
+            font-weight: bold;
+            padding-top: 20px;
+            padding-bottom: 10px;
+        }
+        ul {
+            list-style: none; /* Remove HTML bullets */
+            padding: 0;
+            margin: 0;
+        }
+        li::before {
+            content: "›"; /* Insert content that looks like bullets */
+            font-size: 30;
+            padding-right: 12px;
+            vertical-align: -5%;
+        }
+
+        .center {
+            margin: auto;
+            box-shadow: 0px 0px 8px #000;
+            background-color:#4a4a4f;
+            width: 800px;
+            height: 40px;
+            padding: 15pt;
+            font-family: 'Trebuchet MS', serif;
+            font-size: 15px;
+            text-align: center;
+            color:#ffffff;
+            padding-top: 15pt;
+            padding-bottom: 15pt;
+        }
+
+        code { 
+            font-size: 15px;
+            font-family: 'Courier New';
+            background-color: #38383a;
+            padding-right: 2px;
+            padding-left: 2px;
+            padding-top: 1px;
+        }
+            keyword { 
+                color: #a0f0f0;
+            }
+            variable { 
+                color: #a0f0a0;
+            }
+            tname { 
+                color: #f0a060;
+            }
+            direc { 
+                color: #f0f0a0;
+            }
+            func { 
+                color: #a0a0f0;
+            }
+            string { 
+                color: #a0a0a0;
+            }           
+            num{
+                color: #f0a0a0;
+            }
+
+    </style>
+</head>
+
+<body style="background-color:#303033" >
+
+<div class="navbar">
+    <ne><a href="infinity-donate.html">Donate</a></ne>
+    <ne><a class="active" href="infinity-rules.html">Rules</a></ne>
+</div>
+
+<br>
+
+<div class="top">
+    Welcome to E2 Beyond Infinity!<br>
+    <span style="font-size: 16px; font-weight: normal">
+        Wiremod Build &#38; Kill | Overclocked E2 | Starfall
+    </span>
+</div>
+
+<br>
+
+<div class="center" id="motd" style="height: auto">
+    <div style="padding-bottom: 5px; font-size:15px">&nbsp;~ Coding Tip of the Day ~&nbsp</div>
+    This DHTML frame isn't running Chromium.<br>
+    You should try out a newer branch of Garry's Mod sometime.
+</div>
+
+<br>
+
+<p>
+    <div style="background-color:#4a4a4f; box-shadow: 0px 0px 8px; margin-left: 10%; margin-right: 10%">
+        <div style="text-align: center; padding-top: 20px">
+            <big>
+                <b>Guidelines & Server Rules</b><br>
+                <rules>Basically, just don't piss on each other or the server, that's about it.</rules>
+                <hr style="width: 95%;">
+            </big>
+        </div>
+
+        <div style="margin-left: 40px;margin-top: 10px">
+
+            <ul>
+            
+                <div style="margin-bottom: 6px;margin-top: 8px"><h><li>Remember to share server CPU!</h></div>
+                <div style="margin-left: 30px">
+                    <rules>
+                        Keep an eye on the global E2 usage meter posted at spawn.</br>
+                        You can move it for yourself by left-clicking anywhere with the <i>E2 Usage Meter Mover Tool</i> (found under <i>GUI Panels</i>)<br>
+                        It should ideally stay below 100%, but can go as high as 130% without <i>significant</i> server lag.</br></br>
+                        You can use the below loop to limit any contained code to <code><variable>MaxCPU</variable></code> &mu;s of CPU time:</br>
+                        <code><keyword>while</keyword>( <func>cpuUsage</func>()*<num>10</num>^<num>6</num> &lt; <variable>MaxCPU</variable> ){ <func>doSomething</func>() }</code>
+                    </rules>
+                </div>
+                
+                <div style="margin-bottom: 6px;margin-top: 8px"><h><li>Don't spam.</h></div>
+                <div style="margin-left: 30px">
+                    <rules>
+                        If you spawn enough of it to cause a disturbance to the server, you're spamming.</br>
+                        This includes non-entities such as bullets, trails, PAC3 anything, sounds, and even light cast by lamps.</br>
+                        Dupes that freeze the server when spawning also fall under this category.
+                    </rules>
+                </div>
+                
+                <div style="margin-bottom: 6px"><h><li>Don't be a dick.</h></div>
+                <div style="margin-left: 30px">
+                    <rules>
+                        Don't bother other players on purpose—please use common sense!<br>
+                        If a player asks you to stop treating them or their stuff a certain way, you should.</br>
+                        No personal attacks—things like racism and sexism will probably get you banned!
+                    </rules>
+                </div>
+                
+                <div style="margin-bottom: 6px;margin-top: 8px"><h><li>You may prop minge, BUT...</h></div>
+                <div style="margin-left: 30px">
+                    <rules>
+                    Whatever you do, make sure you don't lag or crash the server in the process.</br>
+                    Be mindful of the earthquakes you cause, as they may bother those around you.</br>
+                    Make sure you're ready to mash Z at a moment's notice if things go south.
+                    </rules>
+                </div>
+                
+                <div style="margin-bottom: 6px;margin-top: 8px"><h><li>Avoid spawnkill.</h></div>
+                <div style="margin-left: 30px">
+                    <rules>
+                    Mass spawnkill is a no-no; don't make turret wheels or instakill death props in spawn.</br>
+                    Stationary defenses and NPCs should not be placed in spawn.</br>
+                    Try to give players at least three seconds before you damage them.
+                    </rules>
+                </div>
+            
+                <div style="margin-bottom: 6px;margin-top: 8px"><h><li>Regarding Clientside Lua...</h></div>
+                <div style="margin-left: 30px">
+                    <rules>
+                    Clientside cheats are ALLOWED and you will NOT BE BANNED for using them.</br>
+                    Anything goes <i>so long as</i> you don't abuse the net library or exploits to crash the server or clients.</br>   
+                    In the event you're targeted by a cheater, you can either enable god or try to counter their cheat.
+                    </rules>
+                </div>
+            </ul>
+            
+        </div>
+        <div style="padding-bottom: 30px;">
+            <big>
+                <hr style="width: 95%; margin-top: 20px">
+                <span style="margin-left: 50px; padding-top: 20px;">Otherwise, just do your best to enjoy yourself!</span><br>
+            </big>
+            <span style="margin-left: 50px"><rules>&nbsp; — Fasteroid :)</rules></span>
+        </div>
+    </div>  
+</p>
+
+</body>
+
+<script type="text/javascript" src="infinity-script.js"></script>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="styles" href="css/global.css">
+    <link rel="styles" href="../css/navbar.css">
+    <title>E2 Beyond Infinity - Rules</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<component class="navbar" src="navbar.html"></component>
+
+<body>
+    <div class="widthlimiter">
+        <section>
+            AWESOMIUM IS HORRIBLE
+        </section>
+    </div>
+</body>
+
+
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="scripts/components.js"></script>
+
+<script>
+if( window.navigator.userAgent.match('Awesomium') ){ // AHHHH
+    setTimeout( function(){   
+        // now FORCIBLY load the broken stylesheet links, script links, etc...
+
+        // stylesheets
+        var styles = document.head.querySelectorAll('link[rel="styles"]')
+        for( var i=0; i < styles.length; i++ ){
+            var sheet_pre = styles[i];
+            console.log("Awesomium Polyfill: loading style " + sheet_pre.href)
+            fetch(sheet_pre.href).then( function(res){
+                res.text().then( function(css){
+                    var sheet_post = document.createElement("style");
+                    sheet_post.innerHTML = css;
+                    document.head.appendChild(sheet_post);
+                });
+            });
+        }
+
+        // scripts
+        var scripts = document.querySelectorAll('script')
+        for( var i=0; i < scripts.length; i++ ){
+            var script_pre = scripts[i];
+            if(script_pre.src == ""){ continue; }
+            console.log("Awesomium Polyfill: running script " + script_pre.src)
+            fetch(script_pre.src).then( function(res){
+                res.text().then( function(js){
+                    eval(js); // horror
+                });
+            });
+        }
+
+    }, 200)
+}
+</script>
+
