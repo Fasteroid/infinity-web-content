@@ -13,7 +13,6 @@
             0% {  
                 opacity: 0;
                 transform: rotate(0deg);  
-                -webkit-transform: rotate(0deg); 
             }
             5% {
                 opacity: 0;
@@ -30,7 +29,6 @@
             50% {  
                 opacity: 0;
                 transform: rotate(3600deg);  
-                -webkit-transform: rotate(3600deg); 
             }
             55% {
                 opacity: 0;
@@ -53,7 +51,6 @@
             0% {  
                 opacity: 1;
                 transform: rotate(0deg);  
-                -webkit-transform: rotate(0deg); 
             }
             10% {
                 opacity: 1;
@@ -70,7 +67,6 @@
             50% {  
                 opacity: 1;
                 transform: rotate(3600deg);  
-                -webkit-transform: rotate(3600deg); 
             }
             60% {
                 opacity: 1;
@@ -92,11 +88,9 @@
         @keyframes spin {  
             0% {  
                 transform: rotate(0deg);  
-                -webkit-transform: rotate(0deg); 
             }
             50% {  
                 transform: rotate(3600deg);
-                -webkit-transform: rotate(3600deg); 
             }
         }
         
@@ -113,6 +107,7 @@
             animation-iteration-count: infinite; 
             animation-timing-function: cubic-bezier(.5,0,.2,1);
             animation-duration: 16s; 
+            height: 750px
         }
         
         .spinner-noblur {
@@ -120,6 +115,7 @@
             animation-iteration-count: infinite; 
             animation-timing-function: cubic-bezier(.5,0,.2,1);
             animation-duration: 16s; 
+            height: 750px
         }
         
         .spinner {
@@ -127,10 +123,12 @@
             animation-iteration-count: infinite; 
             animation-timing-function: cubic-bezier(.5,0,.2,1);
             animation-duration: 16s; 
+            height: 750px
         }
         
         img {
             zoom: 0.5;
+            padding: 0
         }
 
         body, html {
