@@ -1,0 +1,21 @@
+keyword { 
+    color: #a0f0f0;
+}
+variable { 
+    color: #a0f0a0;
+}
+tname { 
+    color: #f0a060;
+}
+direc { 
+    color: #f0f0a0;
+}
+func { 
+    color: #a0a0f0;
+}
+string { 
+    color: #a0a0a0;
+}           
+num{
+    color: #f0a0a0;
+}
