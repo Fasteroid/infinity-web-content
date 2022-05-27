@@ -126,20 +126,18 @@ function makeTypesOrange(txt){
     return txt;
 }
 
+const directives = [
+    "@name",
+    "@inputs",
+    "@outputs",
+    "@persist",
+    "@trigger",
+    "@model"
+];
 function makeDirectivesYellow(txt){
-	const directives = [
-    	"@name",
-        "@inputs",
-        "@outputs",
-        "@persist",
-        "@trigger",
-        "@model"
-    ];
     for( var n = 0; n < directives.length; n++ ){
-
-    	const direc = directives[n];
+    	var direc = directives[n];
         txt = replaceAll( txt, direc, "<direc>"+direc+"</direc>" );     
-        
     }
     return txt;
 }
@@ -311,4 +309,6 @@ for(var i=0;i<amt;i++){
     texts[i] = text;   
 }
 
-document.getElementById("motd").innerHTML = "<div style=\"padding-bottom: 5px; font-size:15px\">&nbsp;~ Coding Tip of the Day ~&nbsp</div>"+texts.join("");
+window.addEventListener("DOMContentLoaded",function(){
+    document.getElementById("motd").innerHTML = texts.join("");
+});

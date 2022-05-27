@@ -7,16 +7,21 @@
     <title>E2 Beyond Infinity - Rules</title>
 
     <link rel="stylesheet" href="css/awesomium/navbar.css">
-    <!-- <link rel="stylesheet" href="css/chromium/navbar.css"> -->
+    <link rel="stylesheet" href="css/chromium/navbar.css">
+    <link rel="stylesheet" href="css/chromium/global.css">
     <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/e2-highlighting.css">
+    <link rel="stylesheet" href="css/rules.css">
 
-    <!-- <script type="text/javascript" src="scripts/chromium.js"></script> -->
+    <script type="text/javascript" src="scripts/chromium.js"></script>
     <script type="text/javascript" src="scripts/awesomium.js"></script>  
     <script type="text/javascript" src="scripts/navbar.js"></script>  
-<!-- what r u doin -->
+    <script type="text/javascript" src="scripts/e2-highlighting.js"></script>  
+
 </head>
 <body>
     
+    <!-- begin navbar -->
     <div class ="awesomium-nav-bg"></div>
     <div class ="nav" data-style="display: flex">
         <div class="home" id="home"><span>SERVERS BEYOND INFINITY</span></div>
@@ -26,10 +31,10 @@
                     <span>Rules</span>
                 </div>
                 <div class="dropdown-content">
-                    <a href=../e2-rules.html>
+                    <a href=/infinity-web-content/e2bi-rules-new.html>
                         <span>E2BI</span>
                     </a>
-                    <a href=../prophunt-rules.html>
+                    <a href=/infinity-web-content/prophunt-rules.html>
                         <span>PBI</span>
                     </a>
                 </div>
@@ -44,26 +49,96 @@
             </div>
         </div>
     </div>
+    <!-- end navbar -->
 
-    <!-- Small margin to accomodate for navbar -->
+    <div style="padding: 30px">
+        <section>
+            <div style="font-size: 24px; font-weight: normal; text-align: center;">
+                Welcome to E2 Beyond Infinity!
+            </div>
+            <div style="font-size: 16px; font-weight: normal; text-align: center;">
+                Wiremod Build &#38; Kill | Overclocked E2 | Starfall
+            </div>
+            <section style="text-align: center; margin-top: 10px;">
+                <div style="margin-bottom: 5px">~ Coding Tip of the Day ~</div>
+                <div id="motd" style="font-size: 13px;">Enable Javascript!</div>
+            </section>
+        </section>
+        <section style="margin-top: 15px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+            
+            <h2>Guidelines & Server Rules</h2>
+            <h3>Basically, just don't piss on each other or the server, that's about it.</h3>
+            <hr style="width: 100%; margin-top: 10px;">
 
+            <ul>
+            
+                <li>
+                    <h>Remember to share server CPU!</h>
+                    <div>
+                        Keep an eye on the global E2 usage meter posted at spawn.</br>
+                        You can move it for yourself by left-clicking anywhere with the <i>E2 Usage Meter Mover Tool</i> (found under <i>GUI Panels</i>)<br>
+                        It should ideally stay below 100%, but can go as high as 130% without <i>significant</i> server lag.</br>
+                        You can use the below loop to limit any contained code to <code><variable>MaxCPU</variable></code> &mu;s of CPU time:</br>
+                        <code><keyword>while</keyword>( <func>cpuUsage</func>()*<num>10</num>^<num>6</num> &lt; <variable>MaxCPU</variable> ){ <func>doSomething</func>() }</code>    
+                    </div>
+                </li>
 
-    <section>
-        <div style="font-size: 24px; font-weight: normal; text-align: center;">
-            Welcome to E2 Beyond Infinity!
-        </div>
-        <div style="font-size: 16px; font-weight: normal; text-align: center;">
-            Wiremod Build &#38; Kill | Overclocked E2 | Starfall
-        </div>
-    </section>
+                <li>
+                    <h>Don't spam.</h>
+                    <div>
+                        If you spawn enough of it to cause a disturbance to the server, you're spamming.</br>
+                        This includes non-entities such as bullets, trails, PAC3 anything, sounds, and even light cast by lamps.</br>
+                        Dupes that freeze the server when spawning also fall under this category. 
+                    </div>
+                </li>
+                
+                <li>
+                    <h>Don't be a dick.</h>
+                    <div>
+                        Don't bother other players on purpose—please use common sense!<br>
+                        If a player asks you to stop treating them or their stuff a certain way, you should.</br>
+                        No personal attacks—things like racism and sexism will get you banned if they offend someone.
+                    </div>
+                </li>
 
-    
-    <br>
-    
-    <div class="center" id="motd" style="height: auto">
-        <div style="padding-bottom: 5px; font-size:15px">&nbsp;~ Coding Tip of the Day ~&nbsp</div>
-        Javascript is disabled :(
+                <li>
+                    <h>You may prop minge, BUT...</h>
+                    <div>
+                        Whatever you do, make sure you don't lag or crash the server in the process.</br>
+                        Be mindful of the earthquakes you cause, as they may bother those around you.</br>
+                        Make sure you're ready to mash Z at a moment's notice if things go south.
+                    </div>
+                </li>
+
+                <li>
+                    <h>Avoid spawnkill.</h>
+                    <div>
+                        Mass spawnkill is a no-no; don't make turret wheels or instakill death props in spawn.</br>
+                        Stationary defenses and NPCs should not be placed in spawn.</br>
+                        If you're killing them before they can enable god, you're killing them too fast.
+                    </div>
+                </li>
+
+                <li>
+                    <h>Regarding Clientside Lua...</h>
+                    <div>
+                        Clientside cheats are ALLOWED and you will NOT BE BANNED for using them.</br>
+                        Anything goes <i>so long as</i> you don't abuse the net library or exploits to crash the server or clients.</br>   
+                        In the event you're targeted by a cheater, you can either enable god or try to counter their cheat (fun!)
+                    </div>
+                </li>
+            </ul>
+
+            <hr style="width: 100%;">
+
+            <h3>Otherwise, just do your best to enjoy yourself!</h3>
+            <h4>&nbsp; — Fasteroid :)</h4>
+
+        </section>
     </div>
+
+
+    
     
 </body>
 </html>

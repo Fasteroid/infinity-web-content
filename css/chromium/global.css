@@ -1,0 +1,4 @@
+section {
+    max-width: calc( min(80vw, 1920px) );
+    margin: auto;
+}

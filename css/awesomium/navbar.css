@@ -2,9 +2,9 @@
 
 .awesomium-nav-bg {
 	top: 0;
-    height: 58px;
+    height: 51px;
     width: 100%;
-    position: fixed;
+    position: absolute;
     background: #000000;
 }
 
@@ -30,7 +30,7 @@
     text-shadow: 
         0 0 3pt #fff, 0 0 3pt #888,
         0 0 10pt #09f, 0 0 14pt #09f, 0 0 7pt #09f, 0 0 28pt #09f,
-        0 0 40pt #00f, 0 0 36pt #00f, 0 0 34pt #00f, 0 0 32pt #00f, 0 0 30pt #00f, 0 0 40pt #00f, 0 0 32pt #00f, 0 0 32pt;
+        0 0 32pt #00f, 0 0 30pt #00f, 0 0 40pt #00f, 0 0 32pt #00f, 0 0 32pt;
 }
 
 .pages {
@@ -48,7 +48,7 @@
     font-size: 13pt;
     background: #000000;
     text-align: center;
-    padding: 15px 30px 15px 30px;
+    padding: 15px 32px 15px 30px;
     cursor: pointer;
 }
 
@@ -60,7 +60,6 @@
     display: block;
     text-align: center;
     background-color: #000000;
-    padding: 0 15px 0 15px;
 }
 
 .dropdown a:hover {
@@ -69,10 +68,16 @@
         0 0 32pt #00f, 0 0 30pt #00f, 0 0 40pt #00f, 0 0 32pt #00f, 0 0 32pt;
 }
 
+a.cwd:hover {
+    text-shadow: 
+        0 0 7pt #09f, 0 0 28pt #09f,
+        0 0 20pt #00f, 0 0 10pt #00f !important;
+}
+
 .dropdown-content a {
     display: block;
     text-align: left;
-    padding: 15px 0 15px 0;
+    padding: 15px;
     font-size: 12pt;
 }
 

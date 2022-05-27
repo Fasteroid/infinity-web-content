@@ -1,12 +1,18 @@
 
 // thx stackoverflow - code below based on https://stackoverflow.com/a/31837264/15204995
 // now with less JQuery since I'm a vanilla purist!
-function prepNavbar(){
 
+/* 
+    THANKS TO KITSUME FOR HELPING ME BEAT AWESOMIUM INTO SUBMISSION
+    https://github.com/Kitsumi
+*/
+
+
+function highlightNavbar(){
     var extractURL = /[^\/]*$/;
     var pages = document.getElementById("pages");
 
-    var url = window.location.href.match(extractURL)[0]; // I'd be a fool to recompute this repeatedly in the for loop
+    var url = window.location.pathname; // I'd be a fool to recompute this repeatedly in the for loop
 
     url == "" ? url = "index.html" : 0; // fix bug that's been here for ages
 
@@ -15,8 +21,7 @@ function prepNavbar(){
 
         // check normal links
         var type = page.getAttribute("class");
-        var href = page.getAttribute("href");
-        if( type==null && href && href.match(extractURL)[0] == url ){ // null safety
+        if( type == null && page.pathname == url ){
             page.classList.add("cwd");
             return; // there can only be one
         }
@@ -31,13 +36,8 @@ function prepNavbar(){
             var header = page.querySelector(".dropdown-head");
 
             var headerhref = header.querySelector("a")
-            var headerrefhref = null;
 
-            if( headerhref != null ){
-                headerrefhref = headerhref.getAttribute("href")
-            }
-
-            if( headerrefhref && headerrefhref.match(extractURL)[0] == url ){
+            if( headerhref && headerhref.pathname == url ){
                 header.classList.add("cwd");
                 return;
             }
@@ -46,8 +46,7 @@ function prepNavbar(){
 
             for(var j=0; j<subpages.length; j++){
                 var subpage = subpages[j];
-                var subpagehref = subpage.getAttribute("href");
-                if( subpagehref && subpagehref.match(extractURL)[0] == url ){
+                if( subpage && subpage.pathname == url ){
                     subpage.classList.add("cwd");
                     header.classList.add("cwd");
                     return; // there can only be one
@@ -55,37 +54,23 @@ function prepNavbar(){
             }
         }
     }
+}
 
-    //if( window.navigator.userAgent.match('Awesomium') ){
-        var home = document.getElementById("home");
+function prepNavbar(){
+    highlightNavbar();
+    if( window.navigator.userAgent.match('Awesomium') ){ // awesomium fixes
 
         function headerResize() {
-            console.log("Window width: " + window.innerWidth);
-            console.log("buttons width: " + pages.offsetWidth);
-            console.log("Goal:" + (window.innerWidth - pages.offsetWidth - 64))
+            var width = (window.innerWidth - pages.offsetWidth - 40);
 
-            var width = (window.innerWidth - pages.offsetWidth - 28);
-            home.style.width = width + "px";
-
-            // ignore me
             var cursed = document.createElement("style")
             document.head.appendChild(cursed)
-            cursed.innerHTML = "#home { width: " + width + "px !important; }" /* missing semicolon? */
-            // PROGRESS (wtf?)
-
+            cursed.innerHTML = "#home { width: " + width + "px !important; }"
         }
 
         headerResize()
         flexibility(document.documentElement);
-        //window.addEventListener("resize", headerResize);
 
-        // smart
-        // the gmod window will never be resized
-        // idc, im doing it right
-        // wait durr
-        // what happened
-
-        // uno momento por favor
-    //}
+    }
 }
 window.addEventListener("DOMContentLoaded",prepNavbar)

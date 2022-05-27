@@ -8,7 +8,7 @@ tname {
     color: #f0a060;
 }
 direc { 
-    color: #f0f0a0;
+    color: #f0f0a0 !important;
 }
 func { 
     color: #a0a0f0;
@@ -18,4 +18,9 @@ string {
 }           
 num{
     color: #f0a0a0;
+}
+code {
+    background: #2f3234;
+    padding: 2px;
+    border-radius: 4px;
 }
