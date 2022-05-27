@@ -15,32 +15,6 @@ if( window.navigator.userAgent.match('Awesomium') ){
     // is there a way to find how far we need to offset with the behavior I found earlier
 
     // force load stylesheets over https
-    var styles = document.head.querySelectorAll('link[rel="stylesheet"]')
-    for( var i=0; i < styles.length; i++ ){
-        var sheet_pre = styles[i];
-        console.log("Awesomium Polyfill: loading style " + sheet_pre.href)
-        fetch(sheet_pre.href).then( function(res){
-            res.text().then( function(css){
-                var sheet_post = document.createElement("style");
-                sheet_post.innerHTML = css;
-                document.head.appendChild(sheet_post);
-            });
-        });
-    }
-
-    // force load scripts over https
-    var scripts = document.querySelectorAll('script')
-    for( var i=0; i < scripts.length; i++ ){
-        var script_pre = scripts[i];
-        if(script_pre.src == ""){ continue; }
-        console.log("Awesomium Polyfill: running script " + script_pre.src)
-        fetch(script_pre.src).then( function(res){
-            res.text().then( function(js){
-                try{ eval(js) }
-                catch(gay){}; // horror
-            });
-        });
-    }
 
     var styles = document.head.querySelectorAll('link[rel="stylesheet"]')
     for( var i=0; i < styles.length; i++ ){
