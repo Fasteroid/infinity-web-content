@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap');
+
+/* These will not work in awesomium, but are here anyway as a color pallete */
+:root {
+    --text-color: #eeeeee;
+    --transparent-gray: #ffffff15;
+    --gray-t2: #505254;
+    --gray-t1: #404345;
+    font-weight: 400;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #2f3234;
+    color: #eeeeee;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 11pt;
+    line-height: 1.25;
+    word-spacing: -0.75px; 
+}
+
+section {
+    background-color: #404345;
+    padding: 15px;
+    text-align: justify;
+}
+section > section {
+    background-color: #505254;  
+}
+/* all that (no idea how many levels deep this will end up) because no transparency in awesomium */
+
+.description {
+    margin: 0 15px 15px 15px;
+    line-height: 140%;
+    width: auto;
+}

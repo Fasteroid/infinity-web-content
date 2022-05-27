@@ -1,34 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@600&display=swap');
 
-/* Navbar Utils */
-    div.navbar {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 100%;
-    }
+.awesomium-nav-bg {
+    height: 58px;
+    width: 100%;
+    position: fixed;
+    background: #000000;
+}
+
+.nav {
+    font-family: 'Recursive', sans-serif;
+    font-style: italic;
+	position: fixed;
+	top: 0;
+}
+
+.home {
+    padding: 12px;
+    font-size: 16pt;
+    color: #ffffff;
+    font-weight: 100;
+
+    text-shadow: 
+        0 0 3pt #fff, 0 0 3pt #888,
+        0 0 10pt #09f, 0 0 14pt #09f, 0 0 7pt #09f, 0 0 28pt #09f,
+        0 0 40pt #00f, 0 0 36pt #00f, 0 0 34pt #00f, 0 0 32pt #00f, 0 0 30pt #00f, 0 0 40pt #00f, 0 0 32pt #00f, 0 0 32pt;
+}
+
+.pages {
+    position: fixed; 
+    top: 0; 
+    right: 0;
+    padding: 15px 0 15px 0;
+    color: #ffffff;
+    background: #000000;
+    display: flex;
+    -js-display: flex;
+}    
+
+.dropdown {
     
-    ne {
-        float: right;
-    }
-    
-    ne a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-family: 'Trebuchet MS', serif;
-    }
-    
-    ne a:hover:not(.active) {
-        background-color: #111;
-    }
-    
-    .active {
-        background-color:#5b5b61;
-    }
-/* Navbar Utils */
+}
+
+.dropdown-head {
+    display: block;
+    font-size: 13pt;
+    background: #000000;
+    text-align: center;
+    top: 90%;
+    padding: 0 30px 0 30px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+}
+
+.dropdown:hover .dropdown-content {
+    margin-top: 15px;
+    display: block;
+    text-align: center;
+    background-color: #000000;
+    padding: 0 15px 0 15px;
+}
+
+.dropdown a:hover {
+    text-shadow: 
+        0 0 7pt #09f, 0 0 28pt #09f,
+        0 0 32pt #00f, 0 0 30pt #00f, 0 0 40pt #00f, 0 0 32pt #00f, 0 0 32pt;
+}
+
+.dropdown-content a {
+    display: block;
+    text-align: left;
+    padding: 15px 0 15px 0;
+    font-size: 12pt;
+}
+
+.dropdown a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.cwd {
+    background: rgb(34,34,34) !important;
+}

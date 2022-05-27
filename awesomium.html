@@ -1,36 +1,14 @@
 <script>
-if( window.navigator.userAgent.match('Awesomium') ){ // AHHHH
-    setTimeout( function(){   
-        // now FORCIBLY load the broken stylesheet links, script links, etc...
+    if( window.navigator.userAgent.match('Awesomium') ){ // AHHHH
 
-        // stylesheets
-        var styles = document.head.querySelectorAll('link[rel="stylesheet"]')
-        for( var i=0; i < styles.length; i++ ){
-            var sheet_pre = styles[i];
-            console.log("Awesomium Polyfill: loading style " + sheet_pre.href)
-            fetch(sheet_pre.href).then( function(res){
-                res.text().then( function(css){
-                    var sheet_post = document.createElement("style");
-                    sheet_post.innerHTML = css;
-                    document.head.appendChild(sheet_post);
-                });
-            });
+        // before anything else, polyfill as best we can
+        {
+            var polyfill = new XMLHttpRequest();
+            polyfill.open( "GET", window.location.origin + "/scripts/awesomium/awesomium-polyfill.js", false );
+            polyfill.send( null );
+            eval(polyfill);
         }
 
-        // scripts
-        var scripts = document.querySelectorAll('script')
-        for( var i=0; i < scripts.length; i++ ){
-            var script_pre = scripts[i];
-            if(script_pre.src == ""){ continue; }
-            console.log("Awesomium Polyfill: running script " + script_pre.src)
-            fetch(script_pre.src).then( function(res){
-                res.text().then( function(js){
-                    eval(js); // horror
-                });
-            });
-        }
-
-    }, 200)
-}
+    }
 </script>
 
