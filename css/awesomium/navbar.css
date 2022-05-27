@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Recursive:wght@600&display=swap');
 
 .awesomium-nav-bg {
+	top: 0;
     height: 58px;
     width: 100%;
     position: fixed;
@@ -32,7 +33,6 @@
     right: 0;
     padding: 15px 0 15px 0;
     color: #ffffff;
-    background: #000000;
     display: flex;
     -js-display: flex;
 }    
