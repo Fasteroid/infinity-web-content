@@ -3,7 +3,7 @@
 .awesomium-nav-bg {
 	top: 0;
     height: 51px;
-    width: 100%;
+    width: 90%;
     position: absolute;
     background: #000000;
 }
@@ -16,9 +16,9 @@
 	position: fixed;
 	top: 0;
     justify-content: space-between; 
-    /* Sorry im testing layouts in chrome using non-flex stuff */
-    /* mkay */
     width: 100%;
+    overflow-x: clip;
+    overflow-y: visible;
 }
 
 .home {
@@ -48,7 +48,7 @@
     font-size: 13pt;
     background: #000000;
     text-align: center;
-    padding: 15px 32px 15px 30px;
+    padding: 15px 30px 15px 30px;
     cursor: pointer;
 }
 

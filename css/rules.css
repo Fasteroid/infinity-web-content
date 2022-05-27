@@ -1,7 +1,7 @@
 li h {
     margin-bottom: 6px;
     margin-top: 8px;
-    font-size: 16px;
+    font-size: 16pt;
 }
 
 
@@ -11,18 +11,18 @@ li::before {
 }
 li {
     margin-left: -15px;
-    font-size: 14px;
     line-height: 1.1em;
-    margin-bottom: 20px;
+    margin: 15px;
 }
 ul {
     list-style-type: none;
+    overflow: hidden;
 }
 
 li div {
+    font-size: 12pt;
     line-height: 150%;
-    padding: 10px;
-    margin-left: 20px;
+    padding: 10px 20px;
 }
 
 h2, h3, h4 {
