@@ -1,0 +1,17 @@
+
+# ignore all files
+*
+
+# but keep gitignore
+!.gitignore
+
+# unignore directories
+!/*/
+
+# unignore directory contents
+!/css/**
+!/assets/**
+!/scripts/**
+
+# include all html files
+!*.html
