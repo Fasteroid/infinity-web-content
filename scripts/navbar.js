@@ -61,7 +61,7 @@ function prepNavbar(){
     if( window.navigator.userAgent.match('Awesomium') ){ // awesomium fixes
 
         function headerResize() {
-            var width = (window.innerWidth - pages.offsetWidth - 40);
+            var width = (window.innerWidth - pages.offsetWidth - 38);
 
             var cursed = document.createElement("style")
             document.head.appendChild(cursed)
