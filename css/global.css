@@ -49,3 +49,7 @@ code {
     padding: 2px;
     border-radius: 4px;
 }
+
+.nobold h3, .nobold h4 {
+    font-weight: normal;
+}

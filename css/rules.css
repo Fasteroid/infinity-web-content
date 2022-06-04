@@ -6,7 +6,7 @@ li h {
 
 
 li::before {
-    content: ">"; /* Insert content that looks like bullets */
+    content: "❱"; /* Insert content that looks like bullets */
     font-size: 14px;
 }
 li {
