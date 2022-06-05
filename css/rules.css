@@ -5,14 +5,11 @@ li h {
 }
 
 
-li::before {
-    content: "❱"; /* Insert content that looks like bullets */
-    font-size: 14px;
-}
 li {
     margin-left: -15px;
     line-height: 1.1em;
     margin: 15px;
+    list-style-image: url("../assets/bullet.png");
 }
 ul {
     list-style-type: none;

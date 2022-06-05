@@ -3,7 +3,7 @@
 .awesomium-nav-bg {
 	top: 0;
     height: 51px;
-    width: 90%;
+    width: 100%;
     position: absolute;
     background: #000000;
 }
@@ -39,7 +39,6 @@
 }    
 
 .dropdown {
-    /* thought so */
     display: inline-block;
 }
 

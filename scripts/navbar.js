@@ -9,7 +9,6 @@
 
 
 function highlightNavbar(){
-    var extractURL = /[^\/]*$/;
     var pages = document.getElementById("pages");
 
     var url = window.location.pathname; // I'd be a fool to recompute this repeatedly in the for loop
@@ -56,21 +55,25 @@ function highlightNavbar(){
     }
 }
 
+function awesomiumPatch(){
+    var width = (window.innerWidth - pages.offsetWidth - 40);
+    var cursed = document.createElement("style")
+    document.head.appendChild(cursed)
+    console.log(width + "")
+    cursed.innerHTML = "#home { width: " + width + "px !important; }"
+
+    flexibility(document.documentElement);
+}
+
 function prepNavbar(){
     highlightNavbar();
     if( window.navigator.userAgent.match('Awesomium') ){ // awesomium fixes
-
-        function headerResize() {
-            var width = (window.innerWidth - pages.offsetWidth - 40);
-
-            var cursed = document.createElement("style")
-            document.head.appendChild(cursed)
-            cursed.innerHTML = "#home { width: " + width + "px !important; }"
+        if(window.first){ // set by lua, fixes weird offsets on first load
+            setTimeout(awesomiumPatch, 125);
         }
-
-        headerResize()
-        flexibility(document.documentElement);
-
+        else{
+            awesomiumPatch();
+        }
     }
 }
 window.addEventListener("DOMContentLoaded",prepNavbar)
