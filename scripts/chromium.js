@@ -12,3 +12,7 @@ if( !window.navigator.userAgent.match('Awesomium') ){
 console.openURL = function(url){
     window.open(url, "_blank");
 }
+
+console.openDiscord = function(url){
+    window.open("https://discord.gg/j3qf9mVhxz", "_blank");
+}

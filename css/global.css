@@ -32,6 +32,7 @@ section {
     background-color: #404345;
     padding: 15px;
     text-align: justify;
+    margin: auto;
 }
 section > section {
     background-color: #505254;  
@@ -50,6 +51,6 @@ code {
     border-radius: 4px;
 }
 
-.nobold h3, .nobold h4 {
-    font-weight: normal;
+.nobold *, .nobold {
+    font-weight: normal !important;
 }
