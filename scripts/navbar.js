@@ -7,6 +7,12 @@
     https://github.com/Kitsumi
 */
 
+function loadNavbar(){ // I miss my components script
+    var xml = new XMLHttpRequest();
+    xml.open( "GET", "../navbar.html", false ); // false for synchronous request
+    xml.send( null );
+    document.getElementById("navbar").innerHTML = xml.responseText;
+}
 
 function highlightNavbar(){
     var pages = document.getElementById("pages");
@@ -56,23 +62,22 @@ function highlightNavbar(){
 }
 
 function awesomiumPatch(){
-    var width = (window.innerWidth - pages.offsetWidth - 40);
+    var width = (window.innerWidth - pages.offsetWidth - 38);
     var cursed = document.createElement("style")
     document.head.appendChild(cursed)
-    console.log(width + "")
     cursed.innerHTML = "#home { width: " + width + "px !important; }"
-
     flexibility(document.documentElement);
 }
 
 function prepNavbar(){
+    loadNavbar();
     highlightNavbar();
     if( window.navigator.userAgent.match('Awesomium') ){ // awesomium fixes
         if(window.first){ // set by lua, fixes weird offsets on first load
             setTimeout(awesomiumPatch, 125);
         }
         else{
-            awesomiumPatch();
+            setTimeout(awesomiumPatch, 5);
         }
     }
 }
