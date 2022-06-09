@@ -291,7 +291,7 @@ function syntaxHighlight(txt){
     return txt;
 }
 
-var choice = 74 //Math.floor(tips.length * Math.random());
+var choice = Math.floor(tips.length * Math.random());
 var textMaster = tips[choice];
 var texts = textMaster.split("`");
 var limiters = ["<code>","</code>"];
