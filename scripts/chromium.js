@@ -9,10 +9,16 @@ if( !window.navigator.userAgent.match('Awesomium') ){
     }
 }
 
-console.openURL = function(url){
-    window.open(url, "_blank");
-}
+if( !window.gmod ){
 
-console.openDiscord = function(url){
-    window.open("https://discord.gg/j3qf9mVhxz", "_blank");
+    window.gmod = {}
+
+    gmod.openURL = function(url){
+        window.open(url, "_blank");
+    }
+
+    gmod.openDiscord = function(url){
+        window.open("https://discord.gg/j3qf9mVhxz", "_blank");
+    }
+
 }

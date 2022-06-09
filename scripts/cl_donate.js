@@ -8,6 +8,7 @@ const tips = [
     "All this would be pointless if it weren't for you."
 ];
 
+const DONATE_URL_FRAGMENT = "https://www.paypal.com/donate/?cmd=_donations&business=398CBYZLDHVLU&item_name=Servers%20Beyond%20Infinity&no_recurring=0&custom="
 
 function randomizeStarStyles(){
 
@@ -49,6 +50,21 @@ window.addEventListener("DOMContentLoaded",function(){
 
     //const stars = document.querySelectorAll(".star")
     randomizeStarStyles();
+
+    var steamdetector = document.getElementById("steamdetector");
+    if( !window.gmod.getSteamID ){
+        steamdetector.classList.add("failure");
+        return;
+    };
+
+    var steamid = gmod.getSteamID()
+
+    steamdetector.classList.add("success");
+    steamdetector.children[0].innerHTML = "STEAM FOUND";
+    steamdetector.children[1].innerHTML = "Automatic donation rewards are almost ready!<br>" + 
+    "Your SteamID is <code>"+steamid +"</code>";
+
+    // document.getElementById("donatelink").innerHTML = DONATE_URL_FRAGMENT + encodeURI(steamid); // just to be safe
 
 });
 

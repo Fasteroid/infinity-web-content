@@ -16,7 +16,7 @@
     <script type="text/javascript" src="scripts/chromium.js"></script>
     <script type="text/javascript" src="scripts/awesomium.js"></script>  
     <script type="text/javascript" src="scripts/navbar.js"></script>  
-    <script type="text/javascript" src="scripts/donate.js"></script>  
+    <script type="text/javascript" src="scripts/cl_donate.js"></script>  
 
 </head>
 <body>
@@ -44,9 +44,11 @@
         <section class="body" style="position: relative;">
             
             <div class="nobold" id="steamdetector">
-                <h3>WARNING: STEAM NOT FOUND</h3>
-                <h4>You will NOT automatically get rewards if you donate from here.</h4>
-                <h4>Please open this page in Garry's Mod.</h4>
+                <h3 id="steamstatus">WARNING: STEAM NOT FOUND</h3>
+                <h4 id="steamcaption">
+                    You will NOT automatically get rewards if you donate from here.<br>
+                    Please open this page in Garry's Mod.
+                </h4>
             </div>
 
             <div class="column">
@@ -137,11 +139,10 @@
                 </ul>
             </div>
 
-            
-            <div class="nobold">
-                <h3 id="script-warning">WARNING: STEAM NOT FOUND</h3>
-                <h4>(And the list is not all-inclusive!)</h4>
+            <div class="nobold" id="steamdetector">
+                <h4 id="donatelink">Preparing URL...</span>
             </div>
+
 
         </section>
     </div>

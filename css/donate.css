@@ -110,8 +110,12 @@ h2, h3, h4 {
     to { transform: rotate(360deg); }
 }
 
+#steamdetector.success > h3 {
+    color: #0f0;
+}
+
 /* this will never show in awesomium, which is good because it's broken there: */
-#steamdetector > h3 {
+#steamdetector.failure > h3 {
     animation: error 0.5s alternate-reverse infinite;
 }
 @keyframes error {
