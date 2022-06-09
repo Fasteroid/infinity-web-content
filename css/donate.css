@@ -42,10 +42,11 @@ li div {
 h2, h3, h4 {
     text-align: center;
     margin: 0;
+    position: relative;
 }
 
 .column {
-    vertical-align:top;
+    vertical-align: top;
     position: relative;
     width: 49.5%;
     display: inline-block;
@@ -65,4 +66,55 @@ h2, h3, h4 {
 .body {
     margin-top: 15px; 
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.star-holder > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.star-holder {
+    margin: auto;
+    width: 80%;
+}
+
+.star {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    background-image: url("../assets/star.svg");
+    background-size: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.star.big {
+    width: 48px;
+    height: 48px;  
+}
+
+.star.left {
+    margin-right: 10%;
+}
+
+.star.right {
+    margin-left: 10%;
+}
+
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* this will never show in awesomium, which is good because it's broken there: */
+#steamdetector > h3 {
+    animation: error 0.5s alternate-reverse infinite;
+}
+@keyframes error {
+    from { color: #fff; }
+    to { color: #f00; }
 }

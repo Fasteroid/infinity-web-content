@@ -16,6 +16,7 @@
     <script type="text/javascript" src="scripts/chromium.js"></script>
     <script type="text/javascript" src="scripts/awesomium.js"></script>  
     <script type="text/javascript" src="scripts/navbar.js"></script>  
+    <script type="text/javascript" src="scripts/donate.js"></script>  
 
 </head>
 <body>
@@ -27,35 +28,40 @@
 
 
     <div style="padding: 30px">
-        <section>
-
-            <div style="font-size: 24px; font-weight: normal; text-align: center;">
-                Donation Specifications
-            </div>
-            <div style="font-size: 16px; font-weight: normal; text-align: center;">
-                Here's everything you get for donating:
+        <section style="position: relative;">
+            <div class="star-holder" style="font-weight: normal; text-align: center;">
+                <span class="big star left"></span>
+                <div class="star-header">
+                    <div style="font-size: 24px;">Donation Benefits</div>
+                </div>
+                <span class="big star right"></span>
             </div>
             <section style="text-align: center; margin-top: 10px;">
-                <div style="margin-bottom: 5px">~ Tip of the Day ~</div>
-                <div id="motd" style="font-size: 13px;">Generous acts can be very fulfilling!</div>
+                <div style="margin-bottom: 5px">~ Interesting Fact of the Day ~</div>
+                <div id="motd" style="font-size: 13px;">JavaScript is disabled.</div>
             </section>
         </section>
         <section class="body" style="position: relative;">
             
-            <div class="nobold">
-                <h3>THIS PAGE IS STILL UNDER CONSTRUCTION!</h3>
-                <h4>You can still donate if you know my paypal, but rewards aren't actually working yet.</h4>
+            <div class="nobold" id="steamdetector">
+                <h3>WARNING: STEAM NOT FOUND</h3>
+                <h4>You will NOT automatically get rewards if you donate from here.</h4>
+                <h4>Please open this page in Garry's Mod.</h4>
             </div>
 
             <div class="column">
-                <h2>Prop Hunt Benefits</h2>
+                <h2 class="star-holder">
+                    <span class="star left"></span>
+                    <span>Prop Hunt Benefits</span>
+                    <span class="star right"></span>
+                </h2>
                 <hr>
                 <ul>
                     
                     <li>
                         <h>Donator Points!</h>
                         <ul>
-                            <li>So you can buy that playermodel you wanted.</li>
+                            <li>For buying that playermodel you wanted.</li>
                             <li>$1.00 translates to 100 of them.</li>
                             <li>May be used for even more in the future!</li>
                         </ul>
@@ -64,9 +70,9 @@
                     <li>
                         <h>Accelerated Progress!</h>
                         <ul>
-                            <li>Donating gets you a 2x point bonus.</li>
-                            <li>You'll also grant an extra 5% point bonus the server while you play!</li>
-                            <li>This only accelerates your progress—it isn't pay to win.</li>
+                            <li>You recieve 2x your normal pointshop earnings!</li>
+                            <li>EVERYONE gets an extra +5% multiplier when you're online!</li>
+                            <li>This bonus can stack up to <i>+160%</i> with 32 donators online.</li>
                         </ul>
                     </li>
     
@@ -74,7 +80,11 @@
             </div>
 
             <div class="column">
-                <h2>Sandbox Benefits</h2>
+                <h2 class="star-holder">
+                    <span class="star left"></span>
+                    <span>Sandbox Benefits</span>
+                    <span class="star right"></span>
+                </h2>
                 <hr>
                 <ul>
                     
@@ -97,6 +107,40 @@
                     </li>
     
                 </ul>
+            </div>
+
+            <div class="column" style="margin: auto; width: 100%; margin-top: 15px;">
+                <h2 class="star-holder">
+                    <span class="star left"></span>
+                    <span>Plus Gilded Stuff!</span>
+                    <span class="star right"></span>
+                </h2>
+                <hr>
+                <ul>
+                    
+                    <li>
+                        <h>Special chat tags!</h>
+                        <ul>
+                            <li>You'll gain a fancy rank prefix on both servers.</li>
+                            <li>This is different from most other servers, where donating usually replaces your rank.</li>
+                            <li>In the server Discord Relays, your avatar will also gain a gold ring around it!</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <h>My eternal gratitude!</h>
+                        <ul>
+                            <li>I will remember you fondly, probably forever.</li>
+                        </ul>
+                    </li>
+    
+                </ul>
+            </div>
+
+            
+            <div class="nobold">
+                <h3 id="script-warning">WARNING: STEAM NOT FOUND</h3>
+                <h4>(And the list is not all-inclusive!)</h4>
             </div>
 
         </section>
