@@ -1,11 +1,11 @@
 const tips = [
     "It's a proven fact that acts of kindness make you happier!",
     "You're like, super awesome for checking this page out.",
-    "Props Beyond Infinity has many inspirations from Robocraft. &nbsp;The gilded player bonus points system is one such inspiration.",
+    "Props Beyond Infinity has many inspirations from Robocraft. &nbsp;The pointshop multipliers for donators is one such inspiration.",
     "The Rapid-Fire Toolgun is canonically enchanted with <i>curse of donating</i>.",
-    "Join & Leave sounds were the first feature allocated to donators.",
+    "Join & leave sounds were the first feature allocated to donators.",
     "PayPal sucks, but it's all I've got to work with.",
-    "All this would be pointless if it weren't for you."
+    "All this would be pointless if it weren't for you.",
 ];
 
 const DONATE_URL_FRAGMENT = "https://www.paypal.com/donate/?cmd=_donations&business=398CBYZLDHVLU&item_name=Servers%20Beyond%20Infinity&no_recurring=0&custom="
@@ -43,28 +43,39 @@ function randomizeStarStyles(){
 
 }
 
+var failtimer = -1;
+var steamdetector;
+
 window.addEventListener("DOMContentLoaded",function(){
 
     const choice = Math.floor(Math.random()*tips.length);
     document.getElementById("motd").innerHTML = tips[choice];
 
-    //const stars = document.querySelectorAll(".star")
+    steamdetector = document.getElementById("steamdetector");
+    failtimer = setTimeout( function(){
+
+        if( !window.gmod ){
+            steamdetector.classList.add("failure");
+            return;
+        };
+        
+    }, 1000 )
+
+    gmod.requestSteamID();
     randomizeStarStyles();
 
-    var steamdetector = document.getElementById("steamdetector");
-    if( !window.gmod.getSteamID ){
-        steamdetector.classList.add("failure");
-        return;
-    };
+});
 
-    var steamid = gmod.getSteamID()
+window.receiveSteamID = function(steamid){ // now chromium is giving me issues! AAHHHHH
+
+    clearTimeout(failtimer);
 
     steamdetector.classList.add("success");
     steamdetector.children[0].innerHTML = "STEAM FOUND";
     steamdetector.children[1].innerHTML = "Automatic donation rewards are almost ready!<br>" + 
     "Your SteamID is <code>"+steamid +"</code>";
 
-    // document.getElementById("donatelink").innerHTML = DONATE_URL_FRAGMENT + encodeURI(steamid); // just to be safe
+    document.getElementById("donatelink").innerHTML = DONATE_URL_FRAGMENT + encodeURI(steamid); // just to be safe
 
-});
+}
 

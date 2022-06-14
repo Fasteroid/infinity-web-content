@@ -5,7 +5,7 @@ variable {
     color: #a0f0a0;
 }
 tname { 
-    color: #f0a060;
+    color: #f0a060 !important;
 }
 direc { 
     color: #f0f0a0 !important;
