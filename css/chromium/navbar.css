@@ -66,6 +66,7 @@
     padding: 15px;
     filter: none;
     mix-blend-mode: screen; /* Needed so the glows from the icons merge additively */
+    
 }
 
 .dropdown-content a span {
@@ -81,7 +82,13 @@
 .pages > a {
     font-size: 14pt;
 }
- 
+
+.dropdown-head a {
+    text-align: center;
+    padding-right: 35px;
+    padding-left:  35px;
+}
+
 .dropdown,
 .dropdown-content a,
 .dropdown-head a,
