@@ -101,15 +101,6 @@ h2, h3, h4 {
     margin-left: 10%;
 }
 
-@-webkit-keyframes spin {
-    from { -webkit-transform: rotate(0deg); }
-    to { -webkit-transform: rotate(360deg); }
-}
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
 #steamdetector.success > h3 {
     color: #0f0;
 }
@@ -121,4 +112,47 @@ h2, h3, h4 {
 @keyframes error {
     from { color: #fff; }
     to { color: #f00; }
+}
+
+#donatelink {
+    position: relative;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    font-family: 'Recursive', sans-serif;
+    font-size: 14pt;
+    
+    cursor: not-allowed;
+
+    background-color: #777777;
+    border-top: 5px solid #858585;
+    border-left: 5px solid #858585;
+    border-bottom: 5px solid #707070;
+    border-right: 5px solid #707070;
+    border-radius: 30px;
+}
+
+#donatelink.success:active {
+    background-color: #f59d1a;
+    border-bottom: 5px solid #f0b051;
+    border-right: 5px solid #f0b051;
+    border-top: 5px solid #cc8317;
+    border-left: 5px solid #cc8317;
+}
+
+/* the fact I have to do this on awesomium is retarded */
+.button-centerer {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+#donatelink.success {
+    cursor: pointer;
+    background-color: #ffac33;
+    border-top: 5px solid #ffcb7d;
+    border-left: 5px solid #ffcb7d;
+    border-bottom: 5px solid #cc8317;
+    border-right: 5px solid #cc8317;
 }

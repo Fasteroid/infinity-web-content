@@ -1,0 +1,30 @@
+#donatelink {
+    padding: 0 40px 0 40px;
+}
+
+#donatelink > div {
+    transition: filter 0.15s linear;
+    padding: 3px 0 0 0;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+#donatelink.success:hover {
+    box-shadow: 0 0 15px #805719;
+}
+
+#donatelink.success:hover > div {
+    filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 5px #fff);
+}
+
+#donatelink {
+    padding: 3px 40px 6px 40px;
+    transition: box-shadow 0.15s linear;
+}
+
+#donatelink.success:active div {
+    transform: translate(0px,2px);
+}

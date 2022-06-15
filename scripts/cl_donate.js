@@ -8,7 +8,7 @@ const tips = [
     "All this would be pointless if it weren't for you.",
 ];
 
-const DONATE_URL_FRAGMENT = "https://www.paypal.com/donate/?cmd=_donations&business=398CBYZLDHVLU&item_name=Servers%20Beyond%20Infinity&no_recurring=0&custom="
+const DONATE_URL_FRAGMENT = "https://www.paypal.com/donate/?cmd=_donations&business=398CBYZLDHVLU&item_name=Servers%20Beyond%20Infinity&no_recurring=1&custom="
 
 function randomizeStarStyles(){
 
@@ -45,24 +45,27 @@ function randomizeStarStyles(){
 
 var failtimer = -1;
 var steamdetector;
+var donatelink;
 
 window.addEventListener("DOMContentLoaded",function(){
 
     const choice = Math.floor(Math.random()*tips.length);
     document.getElementById("motd").innerHTML = tips[choice];
 
-    steamdetector = document.getElementById("steamdetector");
-    failtimer = setTimeout( function(){
+    randomizeStarStyles();
 
-        if( !window.gmod ){
+    steamdetector = document.getElementById("steamdetector");
+    donatelink = document.getElementById("donatelink")
+
+    if( !window.gmod.requestSteamID ){
+        failtimer = setTimeout( function(){
             steamdetector.classList.add("failure");
-            return;
-        };
-        
-    }, 1000 )
+            donatelink.children[0].innerHTML = "no steam"
+        });
+        return
+    };
 
     gmod.requestSteamID();
-    randomizeStarStyles();
 
 });
 
@@ -72,10 +75,13 @@ window.receiveSteamID = function(steamid){ // now chromium is giving me issues! 
 
     steamdetector.classList.add("success");
     steamdetector.children[0].innerHTML = "STEAM FOUND";
-    steamdetector.children[1].innerHTML = "Automatic donation rewards are almost ready!<br>" + 
-    "Your SteamID is <code>"+steamid +"</code>";
+    steamdetector.children[1].innerHTML = "Your SteamID is <code>"+steamid +"</code><br>" +
+    "You will automatically recieve donation rewards.";
 
-    document.getElementById("donatelink").innerHTML = DONATE_URL_FRAGMENT + encodeURI(steamid); // just to be safe
+    var url = DONATE_URL_FRAGMENT + encodeURI(steamid)
+
+    donatelink.classList.add("success");
+    donatelink.addEventListener("click",function(){ gmod.openURL(url) })
 
 }
 
