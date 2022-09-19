@@ -9,7 +9,7 @@ const tips = [
     "Longer taunts reward more points per second than short ones.",
     "You can bind specific taunts to keys with the concommand <code>ph_taunt</code>.",
     "As a hunter, you may hear nearby props using voice chat. &nbsp;You can use this to track them down!",
-    "As a prop, nearby hunters can hear you using voice chat in stereo. &nbsp;Be aware that they may use this to find you!",
+    "As a prop, nearby hunters can hear you using voice chat in stereo. &nbsp;Be aware that they may use this to find you!"
 ];
 
 const choice = Math.floor(Math.random()*tips.length);
