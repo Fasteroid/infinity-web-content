@@ -5,7 +5,7 @@ const tips = [
     "As a prop, you can access the prop chooser with <code>F4</code>.",
     "Don't like using F4 for the prop menu? Bind <code>phe_access_propchoose</code> to something else.",
     "The Broom pushes props in an area of effect and is good for sweeping rooms.",
-    "The Jump Pack increases your jump height brings new possibilities within reach.",
+    "The Jump Pack increases your jump height and brings new possibilities within reach.",
     "Longer taunts reward more points per second than short ones.",
     "You can bind specific taunts to keys with the concommand <code>ph_taunt</code>.",
     "As a hunter, you may hear nearby props using voice chat. &nbsp;You can use this to track them down!",
